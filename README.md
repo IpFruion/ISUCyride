@@ -1,1 +1,1 @@
-# ISUCyrideWear
+# ISUCyride
