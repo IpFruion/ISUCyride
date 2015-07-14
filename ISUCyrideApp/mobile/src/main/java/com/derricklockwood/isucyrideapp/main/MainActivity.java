@@ -14,7 +14,9 @@ import com.derricklockwood.isucyrideapp.data.CoreData;
 
 public class MainActivity extends FragmentActivity {
 
+    private static final String CORE_DATA_ID = "core_data";
     private CoreData coreData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

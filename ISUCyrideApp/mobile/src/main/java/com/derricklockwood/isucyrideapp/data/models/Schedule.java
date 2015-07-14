@@ -87,8 +87,8 @@ public class Schedule {
 
     @Override
     public String toString() {
-        String out = "";
-        out += name + "\n";
+        String out = "\n";
+        out += name + ":" + scheduleID + "\n";
         out += "\t" + getStartDateFormated() + "\n";
         out += "\t" + getEndDateFormated() + "\n";
         return out;

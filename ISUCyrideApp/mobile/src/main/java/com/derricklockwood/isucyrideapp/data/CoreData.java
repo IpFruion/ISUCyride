@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.io.Serializable;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
@@ -24,8 +25,8 @@ import java.util.ArrayList;
  * Created by Derrick Lockwood on 7/13/15.
  */
 public class CoreData {
-    Schedule[] schedules;
-    Bus[] buses;
+    private Schedule[] schedules;
+    private Bus[] buses;
 
     public CoreData(InputStream jsonInputStream) {
         JSONObject jsonRaw = getJsonRaw(jsonInputStream);
@@ -33,6 +34,22 @@ public class CoreData {
         buses = Bus.createBuses(jsonRaw, getCurrentSchedule());
     }
 
+    public Bus[] getBuses() {
+        return buses;
+    }
+    public Schedule[] getSchedules() {
+        return schedules;
+    }
+    private void printSchedules() {
+        for (Schedule schedule : schedules) {
+            Log.println(Log.ASSERT, "schedules", schedule.toString());
+        }
+    }
+    private void printBuses() {
+        for (Bus b : buses) {
+            Log.println(Log.ASSERT, "buses", b.toString());
+        }
+    }
     private Schedule getCurrentSchedule() {
         Schedule currentSchedule = null;
         for (Schedule schedule : schedules) {

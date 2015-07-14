@@ -19,23 +19,26 @@ public class Bus {
     private static final String BUS_COLOR_ID = "color";
 
 
-    private String busColorID;
-    private String busName;
+    private String busID;
+    private String busColorName;
     private int busColor;
     private BusDirection busDirection;
     private Stop[] stops;
 
-    public Bus (String busColorID, String busName, String busColorHex, Stop[] stops, BusDirection busDirection) {
-        this.busColorID = busColorID;
-        this.busName = busName;
+    public Bus (String busColorName, String busID, String busColorHex, Stop[] stops, BusDirection busDirection) {
+        this.busID = busID;
+        this.busColorName = busColorName;
         this.stops = stops;
         this.busDirection = busDirection;
         busColor = Color.parseColor("#" + busColorHex);
     }
 
+    public String getFullBusName() {
+        return busColorName + " " + busID + " " + busDirection.getDirectionName();
+    }
+
     public static Bus[] createBuses(JSONObject busRaw, Schedule currentSchedule) {
         ArrayList<Bus> buses = new ArrayList<Bus>();
-
         //Buses {
         JSONObject busesRaw = busRaw.optJSONObject(BUSES_ID);
         //busses color names "Red", "Green"...
@@ -47,13 +50,13 @@ public class Bus {
             String busHexColor = busSet.optString(BUS_COLOR_ID);
             //1...1A...
             JSONArray busIDNames = getBusIDNames(busSet.names());
-            for (int j = 0; j<busIDNames.length(); i++) {
+            for (int j = 0; j<busIDNames.length(); j++) {
                 String busID = busIDNames.optString(j);
                 JSONObject finalBusRaw = busSet.optJSONObject(busID);
                 BusDirection[] busDirections = BusDirection.createBusDirections(finalBusRaw);
                 for (int k = 0; k<busDirections.length; k++) {
-                    Stop[] stops = Stop.createStops(finalBusRaw, currentSchedule, busDirections[i]);
-                    buses.add(new Bus(busColorName, busID, busHexColor, stops, busDirections[i]));
+                    Stop[] stops = Stop.createStops(finalBusRaw, currentSchedule, busDirections[k]);
+                    buses.add(new Bus(busColorName, busID, busHexColor, stops, busDirections[k]));
                 }
             }
         }
@@ -69,5 +72,10 @@ public class Bus {
             }
         }
         return array;
+    }
+
+    @Override
+    public String toString() {
+        return getFullBusName() + "\n";
     }
 }
