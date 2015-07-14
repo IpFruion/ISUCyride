@@ -1,0 +1,686 @@
+{
+  "schedules": {
+    "summer_schedule": {
+      "name": "Summer Schedule",
+      "start_date": "5/9/2015",
+      "end_date": "8/16/2015"
+    },
+    "break_schedule": {
+      "name": "Break Schedule",
+      "start_date": "",
+      "end_date": ""
+    },
+    "school_year_schedule": {
+      "name": "School Year Schedule",
+      "start_date": "",
+      "end_date": ""
+    }
+  },
+  "buses": {
+    "Red": {
+      "color": "FF0000",
+      "1": {
+        "directions": {
+          "south_west": {
+            "name": "South & West"
+          },
+          "east_north": {
+            "name": "East & North"
+          }
+        },
+        "stops": {
+          "North Grand Mall": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  "6:25",
+                  "7:00",
+                  "7:31",
+                  "7:52",
+                  "8:12",
+                  "8:32",
+                  "8:52",
+                  "9:22",
+                  "9:52",
+                  "10:22",
+                  "10:52",
+                  "11:32",
+                  "11:52",
+                  "12:12",
+                  "12:32",
+                  "12:52",
+                  "1:12",
+                  "1:32",
+                  "1:52",
+                  "2:12",
+                  "2:32",
+                  "2:52",
+                  "3:12",
+                  "3:32",
+                  "3:52",
+                  "4:12",
+                  "4:32",
+                  "4:52",
+                  "5:12",
+                  "5:32",
+                  "5:52",
+                  "6:32",
+                  "7:12",
+                  "7:52",
+                  "8:32",
+                  "9:12",
+                  "9:52",
+                  "10:31"
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "Mary Greeley Hospital": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  "6:31",
+                  "7:07",
+                  "7:38",
+                  "7:58",
+                  "8:18",
+                  "8:38",
+                  "8:58",
+                  "9:28",
+                  "9:58",
+                  "10:28",
+                  "10:58",
+                  "11:38",
+                  "11:58",
+                  "12:18",
+                  "12:38",
+                  "12:58",
+                  "1:18",
+                  "1:38",
+                  "1:58",
+                  "2:18",
+                  "2:38",
+                  "2:58",
+                  "3:18",
+                  "3:38",
+                  "3:58",
+                  "4:18",
+                  "4:38",
+                  "4:58",
+                  "5:18",
+                  "5:38",
+                  "5:58",
+                  "6:38",
+                  "7:18",
+                  "7:58",
+                  "8:38",
+                  "9:18",
+                  "9:58",
+                  "10:37"
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "City Hall": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "L. Way & Beach": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "Kildee Hall": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "Beyer Hall": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "L. Way & Marshall": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          },
+          "Ames Middle School": {
+            "south_west": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            },
+            "east_north": {
+              "Weekday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Saturday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              },
+              "Sunday": {
+                "summer_schedule": [
+                  
+                ],
+                "break_schedule": [
+                  
+                ],
+                "school_year_schedule": [
+                  
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
