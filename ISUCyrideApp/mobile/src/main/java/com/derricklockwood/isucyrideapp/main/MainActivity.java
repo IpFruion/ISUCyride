@@ -131,7 +131,7 @@ public class MainActivity extends FragmentActivity implements CyrideFragmentCall
         return new BusGroupListAdapter(coreData.getMyBusRoutes(), this);
     }
     public BusMenuHandler createBusMenuHandler() {
-        BusMenuItem[] busMenuItems = {BusMenuItem.BUS_ROUTES, BusMenuItem.BUS_MAP, BusMenuItem.BUS_SETTINGS};
+        BusMenuItem[] busMenuItems = {BusMenuItem.BUS_ROUTES, BusMenuItem.BUS_SETTINGS};
         return new BusMenuHandler(this, busMenuItems);
     }
 
