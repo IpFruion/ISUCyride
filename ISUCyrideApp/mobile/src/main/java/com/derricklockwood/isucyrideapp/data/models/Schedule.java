@@ -5,6 +5,7 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +16,7 @@ import java.util.Locale;
 /**
  * Created by Derrick Lockwood on 7/13/15.
  */
-public class Schedule {
+public class Schedule implements Serializable {
     private static final String SCHEDULES_ID = "schedules";
     private static final String DATE_FORMAT_PATTERN = "MM/d/yyyy";
     private static final String NULL_DATE = "N/A";

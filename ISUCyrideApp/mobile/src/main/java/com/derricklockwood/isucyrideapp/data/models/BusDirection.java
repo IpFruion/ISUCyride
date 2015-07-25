@@ -3,18 +3,18 @@ package com.derricklockwood.isucyrideapp.data.models;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Derrick Lockwood on 7/13/15.
  */
-public class BusDirection {
-    private static final String BUS_DIRECTIONS_ID = "directions";
+public class BusDirection implements Serializable {
     private static final String DIRECTION_NAME_ID = "name";
     private String directionID;
     private String directionName;
 
-    public BusDirection(String directionName, String directionID) {
+    public BusDirection(String directionID, String directionName) {
         this.directionID = directionID;
         this.directionName = directionName;
     }
@@ -25,15 +25,8 @@ public class BusDirection {
         return directionName;
     }
 
-    public static BusDirection[] createBusDirections(JSONObject finalBusRaw) {
-        JSONObject directionsRaw = finalBusRaw.optJSONObject(BUS_DIRECTIONS_ID);
-        JSONArray directionsNames = directionsRaw.names();
-        ArrayList<BusDirection> busDirections = new ArrayList<BusDirection>();
-        for (int i = 0; i<directionsNames.length(); i++) {
-            String busDirectionID = directionsNames.optString(i);
-            JSONObject busDirection = directionsRaw.optJSONObject(busDirectionID);
-            busDirections.add(new BusDirection(busDirection.optString(DIRECTION_NAME_ID), busDirectionID));
-        }
-        return busDirections.toArray(new BusDirection[0]);
+    public static BusDirection createBusDirection(JSONObject directionRaw, String busDirectionID) {
+        String busDirectionName = directionRaw.optString(DIRECTION_NAME_ID);
+        return new BusDirection(busDirectionID, busDirectionName);
     }
 }

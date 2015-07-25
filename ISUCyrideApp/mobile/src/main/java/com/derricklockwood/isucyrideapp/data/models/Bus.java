@@ -1,81 +1,128 @@
 package com.derricklockwood.isucyrideapp.data.models;
 
-import android.graphics.Color;
+import com.derricklockwood.isucyrideapp.data.BusGroupCallBack;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by Derrick Lockwood on 7/13/15.
  */
-public class Bus {
-    private static final String BUSES_ID = "buses";
-    private static final String BUS_COLOR_ID = "color";
-
+public class Bus implements Serializable {
 
     private String busID;
-    private String busColorName;
-    private int busColor;
+    private String busIDName;
+    private BusGroupCallBack busGroupCallBack;
     private BusDirection busDirection;
     private Stop[] stops;
+    public boolean isInMyBusRoute;
 
-    public Bus (String busColorName, String busID, String busColorHex, Stop[] stops, BusDirection busDirection) {
-        this.busID = busID;
-        this.busColorName = busColorName;
+    public Bus (String busIDName, BusDirection busDirection, Stop[] stops) {
+        this.busIDName = busIDName;
         this.stops = stops;
         this.busDirection = busDirection;
-        busColor = Color.parseColor("#" + busColorHex);
+        isInMyBusRoute = false;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o.getClass().getName().equalsIgnoreCase(this.getClass().getName())) {
+            Bus bus = (Bus) o;
+            if (bus.getBusID().equalsIgnoreCase(this.getBusID())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Stop[] getStops() {
+        return stops;
+    }
+
+    public LatLng[] getStopLocations() {
+        ArrayList<LatLng> stopLocations = new ArrayList<LatLng>();
+        for (Stop stop : stops) {
+            stopLocations.add(stop.getStopLocation());
+        }
+        return stopLocations.toArray(new LatLng[0]);
+    }
+
+    private void makeBusID() {
+        String id = getFullBusName();
+        if (id == null) {
+            return;
+        }
+        busID = id.replace(" ","_");
+    }
     public String getFullBusName() {
-        return busColorName + " " + busID + " " + busDirection.getDirectionName();
+        if (busGroupCallBack == null) {
+            return null;
+        }
+        return busGroupCallBack.getBusColorName() + " " + busIDName + " " + busDirection.getDirectionName();
     }
-
-    public static Bus[] createBuses(JSONObject busRaw, Schedule currentSchedule) {
-        ArrayList<Bus> buses = new ArrayList<Bus>();
-        //Buses {
-        JSONObject busesRaw = busRaw.optJSONObject(BUSES_ID);
-        //busses color names "Red", "Green"...
-        JSONArray busColorNames = busesRaw.names();
-        for (int i = 0; i<busColorNames.length(); i++) {
-            String busColorName = busColorNames.optString(i);
-            //Red...
-            JSONObject busSet = busesRaw.optJSONObject(busColorName);
-            String busHexColor = busSet.optString(BUS_COLOR_ID);
-            //1...1A...
-            JSONArray busIDNames = getBusIDNames(busSet.names());
-            for (int j = 0; j<busIDNames.length(); j++) {
-                String busID = busIDNames.optString(j);
-                JSONObject finalBusRaw = busSet.optJSONObject(busID);
-                BusDirection[] busDirections = BusDirection.createBusDirections(finalBusRaw);
-                for (int k = 0; k<busDirections.length; k++) {
-                    Stop[] stops = Stop.createStops(finalBusRaw, currentSchedule, busDirections[k]);
-                    buses.add(new Bus(busColorName, busID, busHexColor, stops, busDirections[k]));
-                }
+    public String getBusID() {
+        if (busID == null) {
+            makeBusID();
+        }
+        return busID;
+    }
+    public int getStopCount() {
+        if (stops != null) {
+            return stops.length;
+        }
+        return 0;
+    }
+    public Stop getStop(int position) {
+        if (stops != null) {
+            if (position >= 0 && position < stops.length) {
+                Stop stop = stops[position];
+                stop.updateNextStopTime();
+                return stop;
             }
         }
-        return buses.toArray(new Bus[0]);
+        return null;
     }
-
-    private static JSONArray getBusIDNames(JSONArray busSetNames) {
-        JSONArray array = new JSONArray();
-        for (int i = 0; i<busSetNames.length(); i++) {
-            String name = busSetNames.optString(i);
-            if (Character.isDigit(name.charAt(0))) {
-                array.put(name);
+    public String getBusIDName() {
+        return busIDName;
+    }
+    public BusDirection getBusDirection() {
+        return busDirection;
+    }
+    public String getBusColorName() {
+        return busGroupCallBack.getBusColorName();
+    }
+    public int getBusColor() {
+        return busGroupCallBack.getBusColor();
+    }
+    public void setBusGroupCallBack(BusGroupCallBack busGroupCallBack) {
+        this.busGroupCallBack = busGroupCallBack;
+    }
+    public static ArrayList<Bus> createBuses(JSONObject busRoutes, Schedule currentSchedule) {
+        ArrayList<Bus> buses = new ArrayList<>();
+        JSONArray busRouteNames = busRoutes.names();
+        for (int i = 0; i<busRouteNames.length(); i++) {
+            String busID = busRouteNames.optString(i);
+            JSONObject busDirectionsRaw = busRoutes.optJSONObject(busID);
+            JSONArray busDirectionIDsRaw = busDirectionsRaw.names();
+            for (int j = 0; j<busDirectionIDsRaw.length(); j++) {
+                //east_north
+                String busDirectionId = busDirectionIDsRaw.optString(j);
+                //name...stops
+                JSONObject busDirectionRaw = busDirectionsRaw.optJSONObject(busDirectionId);
+                BusDirection busDirection = BusDirection.createBusDirection(busDirectionRaw, busDirectionId);
+                Stop[] stops = Stop.createStops(busDirectionRaw, currentSchedule);
+                buses.add(new Bus(busID, busDirection, stops));
             }
         }
-        return array;
+        return buses;
     }
 
     @Override
     public String toString() {
-        return getFullBusName() + "\n";
+        return getFullBusName();
     }
 }

@@ -2,6 +2,12 @@
     <string name="app_name">ISUCyride</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="back_button">Back</string>
     <string name="action_settings">Settings</string>
     <string name="action_busroutes">Bus Routes</string>
+    <string name="action_bus_map_name">Bus Map</string>
+    <string name="my_route_selection_on">My Route On</string>
+    <string name="my_route_selection_off">My Route Off</string>
+    <string name="clear_my_routes">Clear My Routes</string>
+
 </resources>

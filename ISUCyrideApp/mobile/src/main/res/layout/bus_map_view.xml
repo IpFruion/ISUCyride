@@ -13,17 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/bus_map_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ExpandableListView
-            android:id="@+id/bus_list"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
-
-    </LinearLayout>
-
+        android:layout_height="match_parent" />
 </FrameLayout>

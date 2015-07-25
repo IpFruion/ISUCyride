@@ -11,4 +11,8 @@
         android:id="@+id/action_busRoutes"
         android:title="@string/action_busroutes"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_bus_map"
+        android:title="@string/action_bus_map_name"
+        app:showAsAction="ifRoom" />
 </menu>
